@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暗区突围 - 搜打撤射击游戏</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI 层 -->
+        <div id="ui">
+            <div id="hud">
+                <div class="health-bar">
+                    <div class="health-fill"></div>
+                    <span class="health-text">100</span>
+                </div>
+                <div class="ammo-display">
+                    <span class="current-ammo">30</span> / <span class="total-ammo">90</span>
+                </div>
+                <div class="equipment-slots">
+                    <div class="slot" data-slot="primary"></div>
+                    <div class="slot" data-slot="secondary"></div>
+                    <div class="slot" data-slot="melee"></div>
+                </div>
+            </div>
+            
+            <div id="inventory" class="hidden">
+                <div class="inventory-grid">
+                    <!-- 动态生成装备栏格子 -->
+                </div>
+            </div>
+            
+            <div id="minimap"></div>
+        </div>
+        
+        <!-- 游戏菜单 -->
+        <div id="gameMenu">
+            <div class="menu-content">
+                <h1>暗区突围</h1>
+                <button id="startButton">开始游戏</button>
+                <button id="optionsButton">设置</button>
+                <button id="quitButton">退出</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 游戏脚本 -->
+    <script src="src/js/config.js"></script>
+    <script src="src/js/utils.js"></script>
+    <script src="src/js/Vector2D.js"></script>
+    <script src="src/js/Camera.js"></script>
+    <script src="src/js/SettingsManager.js"></script>
+    <script src="src/js/Player.js"></script>
+    <script src="src/js/Weapon.js"></script>
+    <script src="src/js/Enemy.js"></script>
+    <script src="src/js/Map.js"></script>
+    <script src="src/js/Game.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>

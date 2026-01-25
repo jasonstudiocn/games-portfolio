@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JasonStudio Vibe Coding - 暗区突围 | 猫咪快跑 | 网页版我的世界</title>
+    <meta name="description" content="JasonStudio Vibe Coding - 精选网页游戏作品，包含暗区突围战术射击游戏、猫咪快跑跑酷游戏、网页版我的世界3D沙盒游戏">
+    <meta name="keywords" content="JasonStudio, Vibe Coding, 网页游戏, HTML5游戏, JavaScript游戏, 暗区突围, 猫咪快跑, 我的世界">
+    <meta name="author" content="Game Developer">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎮 JasonStudio Vibe Coding</h1>
+            <nav class="nav">
+                <a href="#arena-breakout" class="nav-link">暗区突围</a>
+                <a href="#cat-runner" class="nav-link">猫咪快跑</a>
+                <a href="#minecraft-web" class="nav-link">网页版我的世界</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">精选网页游戏作品</h2>
+                <p class="hero-subtitle">JasonStudio Vibe Coding - 使用现代Web技术打造的互动游戏体验</p>
+            </div>
+        </section>
+
+        <!-- 暗区突围 -->
+        <section id="arena-breakout" class="game-section">
+            <div class="container">
+                <div class="game-card">
+                    <div class="game-image">
+                <div class="game-image-container">
+                    <img src="images/arena-breakout.png" alt="暗区突围游戏截图" class="game-screenshot">
+                </div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">暗区突围</h3>
+                        <p class="game-description">
+                            基于HTML5 Canvas开发的2D搜打撤射击游戏，灵感来源于"暗区突围"等战术射击游戏。
+                            体验紧张刺激的战斗，搜集物资，与智能AI敌人对抗，最终安全撤离。
+                        </p>
+                        <div class="game-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🎯</span>
+                                <span>战术射击</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🤖</span>
+                                <span>智能AI敌人</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🗺️</span>
+                                <span>随机地图</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎒</span>
+                                <span>物资搜集</span>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <h4>操作说明：</h4>
+                            <div class="control-list">
+                                <div class="control-item"><kbd>W/A/S/D</kbd> 移动</div>
+                                <div class="control-item"><kbd>Shift</kbd> 冲刺</div>
+                                <div class="control-item"><kbd>鼠标</kbd> 瞄准射击</div>
+                                <div class="control-item"><kbd>R</kbd> 换弹</div>
+                                <div class="control-item"><kbd>1/2/3</kbd> 切换武器</div>
+                            </div>
+                        </div>
+                        <div class="game-buttons">
+                        <button class="game-btn" onclick="openGame('games/arena-breakout')">
+                            开始游戏
+                        </button>
+                            <button class="github-btn" onclick="openGithub('arena-breakout')">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 猫咪快跑 -->
+        <section id="cat-runner" class="game-section">
+            <div class="container">
+                <div class="game-card">
+                    <div class="game-image">
+                <div class="game-image-container">
+                    <img src="images/cat-runner-game.png" alt="猫咪快跑游戏截图" class="game-screenshot">
+                </div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">猫咪快跑</h3>
+                        <p class="game-description">
+                            一款轻松愉快的横版跑酷游戏，控制可爱的小猫咪躲避障碍物，收集宝物。
+                            支持移动端操作，包含血量系统、无敌道具等丰富玩法。
+                        </p>
+                        <div class="game-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🏃</span>
+                                <span>跑酷挑战</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⭐</span>
+                                <span>无敌道具</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">💗</span>
+                                <span>血量系统</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span>移动支持</span>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <h4>操作说明：</h4>
+                            <div class="control-list">
+                                <div class="control-item"><kbd>空格</kbd> 跳跃</div>
+                                <div class="control-item"><kbd>点击屏幕</kbd> 跳跃（移动端）</div>
+                            </div>
+                            <div class="game-items">
+                                <h4>游戏元素：</h4>
+                                <div class="items-list">
+                                    <div class="item-item">🌵 仙人掌 -10血</div>
+                                    <div class="item-item">🥣 猫粮 +10分</div>
+                                    <div class="item-item">🐦 金鸟 +50分</div>
+                                    <div class="item-item">🦇 蝙蝠 -10血（夜晚）</div>
+                                    <div class="item-item">💗 爱心鸟 +10血</div>
+                                    <div class="item-item">⭐ 彩虹星 10秒无敌</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-buttons">
+                        <button class="game-btn" onclick="openGame('games/cat-runner-game')">
+                            开始游戏
+                        </button>
+                            <button class="github-btn" onclick="openGithub('cat-runner-game')">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 网页版我的世界 -->
+        <section id="minecraft-web" class="game-section">
+            <div class="container">
+                <div class="game-card">
+                    <div class="game-image">
+                <div class="game-image-container">
+                    <img src="images/minecraft-web.png" alt="网页版我的世界游戏截图" class="game-screenshot">
+                </div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">网页版我的世界</h3>
+                        <p class="game-description">
+                            基于Three.js构建的3D沙盒游戏，实现方块建造与破坏、程序化地形生成等功能。
+                            体验在3D世界中自由创造的乐趣，支持多种方块类型和第一人称视角。
+                        </p>
+                        <div class="game-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🎨</span>
+                                <span>3D渲染</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🏗️</span>
+                                <span>建造破坏</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🌍</span>
+                                <span>程序化地形</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎮</span>
+                                <span>第一人称</span>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <h4>操作说明：</h4>
+                            <div class="control-list">
+                                <div class="control-item"><kbd>W/A/S/D</kbd> 移动</div>
+                                <div class="control-item"><kbd>空格</kbd> 跳跃</div>
+                                <div class="control-item"><kbd>鼠标</kbd> 视角控制</div>
+                                <div class="control-item"><kbd>左键</kbd> 破坏方块</div>
+                                <div class="control-item"><kbd>右键</kbd> 放置方块</div>
+                                <div class="control-item"><kbd>1-9</kbd> 切换方块</div>
+                            </div>
+                            <div class="block-types">
+                                <h4>方块类型：</h4>
+                                <div class="blocks-list">
+                                    <div class="block-item">🟩 草块 🪨 石头 🟫 木头</div>
+                                    <div class="block-item">🟫 泥土 🌳 树叶 💧 水</div>
+                                    <div class="block-item">🏖️ 沙子 🟥 砖块 🟦 玻璃</div>
+                                    <div class="block-item">🟨 金块</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-buttons">
+                        <button class="game-btn" onclick="openGame('games/minecraft-web')">
+                            开始游戏
+                        </button>
+                            <button class="github-btn" onclick="openGithub('minecraft-web')">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 游戏作品集. 使用现代Web技术精心打造.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

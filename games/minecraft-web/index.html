@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页版我的世界</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        #gameCanvas {
+            display: block;
+        }
+        
+        #crosshair {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        #crosshair::before,
+        #crosshair::after {
+            content: '';
+            position: absolute;
+            background: white;
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
+        }
+        
+        #crosshair::before {
+            width: 2px;
+            height: 20px;
+            left: 9px;
+            top: 0;
+        }
+        
+        #crosshair::after {
+            width: 20px;
+            height: 2px;
+            left: 0;
+            top: 9px;
+        }
+        
+        #inventory {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 100;
+        }
+        
+        .inventory-slot {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #888;
+            background: rgba(139, 139, 139, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .inventory-slot.active {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .inventory-slot:hover {
+            border-color: #ccc;
+        }
+        
+        #info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 100;
+        }
+        
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            z-index: 2000;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">加载中...</div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="crosshair"></div>
+    
+    <div id="info">
+        <div>位置: <span id="position">0, 0, 0</span></div>
+        <div>FPS: <span id="fps">60</span></div>
+        <div>模式: <span id="mode">生存</span></div>
+        <div>视角: <span id="camera">第一人称</span> (F切换)</div>
+    </div>
+    
+    <div id="inventory">
+        <div class="inventory-slot active" data-block="grass">草块</div>
+        <div class="inventory-slot" data-block="stone">石头</div>
+        <div class="inventory-slot" data-block="wood">木头</div>
+        <div class="inventory-slot" data-block="dirt">泥土</div>
+        <div class="inventory-slot" data-block="leaves">树叶</div>
+        <div class="inventory-slot" data-block="cobblestone">圆石</div>
+        <div class="inventory-slot" data-block="sand">沙子</div>
+        <div class="inventory-slot" data-block="brick">砖块</div>
+        <div class="inventory-slot" data-block="glass">玻璃</div>
+        <div class="inventory-slot" data-block="gold">金块</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="textures.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

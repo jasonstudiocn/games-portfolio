@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cat Run!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <main class="game-main">
+            <canvas id="gameCanvas" width="1200" height="600"></canvas>
+            
+            <!-- 游戏信息叠加显示 -->
+            <header class="game-header-overlay">
+                <h1>🐱 Cat Run!</h1>
+                <div class="score-display">
+                <div class="health-section">
+                    <span class="health-label">❤️ 血量:</span>
+                    <div class="health-bar-container">
+                        <div id="healthBar" class="health-bar">
+                            <span id="healthText" class="health-text">100/100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="invincible-section" id="invincibleSection" style="display: none;">
+                    <span class="invincible-text" id="invincibleText">⭐ 无敌: 10秒</span>
+                </div>
+                    <span class="score-label">得分:</span>
+                    <span id="score" class="score-value">0</span>
+                    <span class="high-score-label">最高分:</span>
+                    <span id="highScore" class="high-score-value">0</span>
+                    <span class="level-indicator" id="levelIndicator">Lv.1</span>
+                    <span class="speed-indicator" id="speedIndicator">速度: 1.5</span>
+                     <button id="fullscreenBtn" class="fullscreen-btn" title="全屏模式">
+                         <span class="btn-icon">⛶</span>
+                         <span class="btn-text">全屏</span>
+                     </button>
+                 </div>
+             </header>
+            
+            <!-- 移动端控制按钮 -->
+            <div class="mobile-controls" id="mobileControls">
+                <button class="mobile-btn jump-btn" id="mobileJumpBtn">
+                    <span class="btn-icon">🐱</span>
+                    <span class="btn-text">跳跃</span>
+                </button>
+                <button class="mobile-btn pause-btn" id="mobilePauseBtn">
+                    <span class="btn-icon">⏸️</span>
+                    <span class="btn-text">暂停</span>
+                </button>
+            </div>
+            
+            <div class="game-overlay" id="startScreen">
+                <div class="overlay-content">
+                    <h2>🐱 Cat Run!</h2>
+                     <p>使用空格键或点击屏幕跳跃</p>
+                     <p>收集宝物，保持血量，挑战高分！</p>
+                     <p>🌵 仙人掌 -10血 | 🥣 猫粮 +10分</p>
+                     <p>🐦 金鸟 +50分 | 🌙 白天无蝙蝠</p>
+                     <p>🦇 夜晚蝙蝠 -10血 | 💗 爱心鸟 +10血</p>
+                     <p>⭐ 彩虹星 10秒无敌 | 极稀少，谨慎使用！</p>
+                    <button id="startBtn" class="game-btn">开始游戏</button>
+                </div>
+            </div>
+            
+            <div class="game-overlay" id="gameOverScreen" style="display: none;">
+                <div class="overlay-content">
+                    <h2>游戏结束！</h2>
+                    <p>最终得分: <span id="finalScore">0</span></p>
+                    <p id="newRecord" class="new-record" style="display: none;">🎉 新纪录！</p>
+                    <button id="restartBtn" class="game-btn">重新开始</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/sound.js"></script>
+    <script src="js/game-simple-working.js"></script>
+</body>
+</html>

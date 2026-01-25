@@ -1,0 +1,236 @@
+/* 深色主题样式 */
+body.dark-theme {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+}
+
+.dark-theme .game-container {
+    background: rgba(13, 17, 23, 0.95);
+}
+
+.dark-theme .game-header {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    background: linear-gradient(135deg, #1e3a8a 0%, #16213e 100%);
+}
+
+.dark-theme .game-header h1 {
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.dark-theme .score-display {
+    color: #ffffff;
+}
+
+.dark-theme .score-value, 
+.dark-theme .high-score-value {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fbbf24;
+}
+
+.dark-theme .level-indicator {
+    background: linear-gradient(135deg, #16a085 0%, #0891b2 100%);
+    color: #ffffff;
+}
+
+.dark-theme .speed-indicator {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f4c75 100%);
+    color: #ffffff;
+}
+
+.dark-theme .bonus-hint {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1a1a2e;
+}
+
+.dark-theme .speed-indicator.fast {
+    background: linear-gradient(135deg, #f57c00 0%, #dc2626 100%);
+}
+
+.dark-theme .speed-indicator.very-fast {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.dark-theme .game-overlay {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.dark-theme .overlay-content {
+    background: #1a1a2e;
+    border: 2px solid #4a5568;
+    color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .overlay-content h2 {
+    color: #60a5fa;
+}
+
+.dark-theme .overlay-content p {
+    color: #a8b2d1;
+}
+
+.dark-theme .controls-info {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #4a5568;
+    color: #e0e0e0;
+}
+
+.dark-theme .controls-info strong {
+    color: #60a5fa;
+}
+
+.dark-theme .game-btn {
+    background: linear-gradient(135deg, #4a5568 0%, #1e3a8a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .game-btn:hover {
+    box-shadow: 0 6px 20px rgba(74, 85, 104, 0.4);
+    transform: translateY(-2px);
+}
+
+.dark-theme .new-record {
+    color: #fbbf24 !important;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+
+/* 深色模式下的画布样式 */
+.dark-theme #gameCanvas {
+    border: 3px solid #4a5568;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4a5568 0%, #1e3a8a 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* 深色主题下的游戏元素 */
+body.dark-theme .game-footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-top: 1px solid #4a5568;
+}
+
+/* 响应式深色主题调整 */
+@media (max-width: 768px) {
+    .dark-theme .game-header h1 {
+        font-size: 1.2em;
+        text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+    }
+    
+    .dark-theme .level-indicator,
+    .dark-theme .speed-indicator {
+        font-size: 0.7em;
+    }
+    
+    .dark-theme .bonus-hint {
+        font-size: 0.6em;
+    }
+    
+    .dark-theme .overlay-content {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .dark-theme .overlay-content h2 {
+        font-size: 1.2em;
+    }
+    
+    .dark-theme .controls-info {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+    
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .dark-theme .game-header {
+        padding: 4px 8px;
+    }
+    
+    .dark-theme .game-header h1 {
+        font-size: 1em;
+    }
+    
+    .dark-theme .score-display {
+        font-size: 0.7em;
+    }
+    
+    .dark-theme .theme-toggle {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+/* 全屏深色主题优化 */
+.dark-theme {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark-theme .game-container {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.dark-theme .game-header {
+    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    border-bottom: 1px solid #374151;
+}
+
+.dark-theme .game-footer {
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid #374151;
+}
+
+/* 深色模式下的得分动画 */
+.dark-theme .score-value,
+.dark-theme .high-score-value {
+    animation: darkScoreGlow 2s infinite;
+}
+
+@keyframes darkScoreGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(251, 191, 36, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+    }
+}
+
+/* 深色模式下的猫咪特殊效果 */
+.dark-theme .cat-special-effect {
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
+}
