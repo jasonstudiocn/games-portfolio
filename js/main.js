@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 游戏卡片点击事件 - 支持旧占位符和新图片容器
-    const gamePlaceholders = document.querySelectorAll('.game-placeholder, .game-image-container');
-    gamePlaceholders.forEach(placeholder => {
-        placeholder.addEventListener('click', function() {
+    // 图片容器点击事件（可选，如果需要点击图片也可以进入游戏）
+    const gameImageContainers = document.querySelectorAll('.game-image-container');
+    gameImageContainers.forEach(container => {
+        container.addEventListener('click', function() {
             const gameSection = this.closest('.game-section');
             const gameId = gameSection.id;
-            openGame(getGamePath(gameId));
+            navigateToGame(getGamePath(gameId));
         });
     });
 
@@ -74,23 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 打开游戏函数
+// 打开游戏函数（现在改为直接导航）
 function openGame(gamePath) {
-    // 检查游戏路径是否存在（现在指向本地游戏文件夹）
+    // 检查游戏路径是否存在
     const gameUrl = `${gamePath}/index.html`;
     
     // 创建一个临时链接来检查文件是否存在
     fetch(gameUrl, { method: 'HEAD' })
         .then(response => {
             if (response.ok) {
-                // 在新窗口中打开游戏
-                const gameWindow = window.open(gameUrl, '_blank');
-                if (!gameWindow) {
-                    // 如果弹出窗口被阻止，则显示提示
-                    showNotification('游戏已在新标签页中打开，请检查浏览器标签页');
-                } else {
-                    showNotification('游戏启动成功！', 'success');
-                }
+                // 在当前页面直接打开游戏
+                window.location.href = gameUrl;
             } else {
                 showNotification('游戏文件暂时无法访问，请检查文件路径', 'error');
             }
@@ -99,6 +93,11 @@ function openGame(gamePath) {
             console.error('Error accessing game:', error);
             showNotification('游戏文件暂时无法访问', 'error');
         });
+}
+
+// 直接导航到游戏（备用函数）
+function navigateToGame(gamePath) {
+    window.location.href = `${gamePath}/index.html`;
 }
 
 // 打开GitHub页面函数
@@ -184,15 +183,15 @@ document.addEventListener('keydown', function(e) {
         switch(e.key) {
             case '1':
                 e.preventDefault();
-                openGame('games/arena-breakout');
+                navigateToGame('games/arena-breakout');
                 break;
             case '2':
                 e.preventDefault();
-                openGame('games/cat-runner-game');
+                navigateToGame('games/cat-runner-game');
                 break;
             case '3':
                 e.preventDefault();
-                openGame('games/minecraft-web');
+                navigateToGame('games/minecraft-web');
                 break;
         }
     }
