@@ -119,7 +119,9 @@ function getGamePath(gameId) {
     const pathMap = {
         'arena-breakout': 'arena-breakout',
         'cat-runner': 'cat-runner-game',
-        'minecraft-web': 'minecraft-web'
+        'minecraft-web': 'minecraft-web',
+        'tank-shooting-game': 'tank-shooting-game',
+        'raiden-shooting-game': 'raiden-shooting-game'
     };
     return pathMap[gameId] || gameId;
 }
@@ -178,7 +180,7 @@ function showNotification(message, type = 'success') {
 
 // 添加键盘快捷键支持
 document.addEventListener('keydown', function(e) {
-    // 按 Ctrl/Cmd + 1/2/3 快速打开对应游戏
+    // 按 Ctrl/Cmd + 1/2/3/4/5 快速打开对应游戏
     if (e.ctrlKey || e.metaKey) {
         switch(e.key) {
             case '1':
@@ -193,10 +195,18 @@ document.addEventListener('keydown', function(e) {
                 e.preventDefault();
                 navigateToGame('games/minecraft-web');
                 break;
+            case '4':
+                e.preventDefault();
+                navigateToGame('games/tank-shooting-game');
+                break;
+            case '5':
+                e.preventDefault();
+                navigateToGame('games/raiden-shooting-game');
+                break;
         }
     }
     
-    // 按 Ctrl/Cmd + Shift + 1/2/3 快速打开对应GitHub页面
+    // 按 Ctrl/Cmd + Shift + 1/2/3/4/5 快速打开对应GitHub页面
     if ((e.ctrlKey || e.metaKey) && e.shiftKey) {
         switch(e.key) {
             case '1':
@@ -210,6 +220,14 @@ document.addEventListener('keydown', function(e) {
             case '3':
                 e.preventDefault();
                 openGithub('minecraft-web');
+                break;
+            case '4':
+                e.preventDefault();
+                openGithub('tank-shooting-game');
+                break;
+            case '5':
+                e.preventDefault();
+                openGithub('raiden-shooting-game');
                 break;
         }
     }
